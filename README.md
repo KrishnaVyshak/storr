@@ -174,7 +174,7 @@ We hope these examples help you understand the different features of `storr` and
 `storr` uses the Fernet symmetric encryption algorithm to encrypt all session data. The encryption key is generated automatically, but you can also provide a custom encryption key for added security.
 
 ## Version
-### **0.1.0** - *`Latest`*
+### **0.1.1** - *`Latest`*
 
 This is the first version of `storr`. In future versions, new and advanced features will be added to make session storage even more secure and flexible.
 
