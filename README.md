@@ -65,8 +65,21 @@ storage = SecureStorage(session_id, file_path)
 If you want to use a custom encryption key, you can provide a `key` parameter when initializing the `SecureStorage` object.
 
 ```python
-ession_id = "my-session-id"
-key = b'my-custom-encryption-key'
+from storr import SecureStorage
+import base64
+import secrets
+
+# create a session ID for the current user (you could use any string here)
+session_id = '123'
+
+# Generate 32 bytes of random data
+data = secrets.token_bytes(32)
+
+# Encode the data using base64url encoding
+key = base64.urlsafe_b64encode(data)
+
+# create an instance of the SecureStorage class for the session
+#create a 32 urlsafe base64-encoded bytes key
 storage = SecureStorage(session_id, key=key)
 ``` 
 
@@ -116,13 +129,17 @@ If you want to use a custom encryption key for the session data, you can pass it
 
 ```python
 import storr
-from cryptography.fernet import Fernet
+import base64
+import secrets
 
-# Generate a custom encryption key
-key = Fernet.generate_key()
+# Generate 32 bytes of random data
+data = secrets.token_bytes(32)
+
+# Encode the data using base64url encoding
+myKey = base64.urlsafe_b64encode(data)
 
 # Create a SecureStorage instance with the custom key
-storage = storr.SecureStorage('my_session', key=key)
+storage = storr.SecureStorage('my_session', key=myKey)
 
 # Set a value
 storage.set('name', 'John Doe')
