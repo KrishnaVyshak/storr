@@ -2,6 +2,9 @@
 # storr
 ### *The painless way to store session data*
 
+[Github](https://github.com/KrishnaVyshak/storr)
+
+
 `storr` is a Python library for providing a simple and secure way to store session data in a file. With `storr`, you can easily store and retrieve data without worrying about sensitive information being exposed in plain text. `storr` encrypts your data using the `cryptography`  package, ensuring that only authorized parties can access it. Plus, the encrypted data is stored in a file that's protected by your operating system's permissions, providing an additional layer of security. So, whether you're working on a personal project or a professional application, `storr` can help you keep your data secure.
 
 
